@@ -3,12 +3,13 @@ package com.dap.leecode;
 import java.util.*;
 
 /**
- * @Desc: LeeCode题目，两数相加
+ * @Desc: LeeCode题目1，两数相加
  * 1、hashMap中containsKey也有循环遍历
+ *
  * @Author: hepeng
  * @Date: 2019/9/16 22:31
  */
-public class TwoSum {
+public class Subject1 {
 
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,5};
