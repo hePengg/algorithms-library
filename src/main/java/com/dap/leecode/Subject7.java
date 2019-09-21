@@ -4,6 +4,7 @@ package com.dap.leecode;
  * @Desc: LeeCode题目7，整数反转
  *
  * 1、可考虑位运算
+ * 2、反转
  *
  * @Author: hepeng
  * @Date: 2019/9/18 17:21
