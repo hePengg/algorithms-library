@@ -22,7 +22,7 @@ public class PrintAZOpt1 {
     }
 
      /**
-      *  @Desc:  
+      *  @Desc:  使用排列组合实现
       *  
       */
     public static void select(char[] az, int selectCount, int cur) {
