@@ -15,8 +15,10 @@ public class Subject7 {
     static int MIN_VALUE = 0x80000000;
 
     public static void main(String[] args) {
-        System.out.println(MAX_VALUE);
-        System.out.println(reverse(2147483647));
+//        System.out.println(MAX_VALUE);
+        int n = 124141241;
+        System.out.println(n);
+        System.out.println(reverse(n));
     }
 
     /** 再比较一遍顺序*/

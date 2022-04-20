@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Stack;
 
 /**
-  *  @Desc:  LeeCode题目1，两数相加，优化1
+  *  @Desc:  LeeCode题目1，两数相加，优化2
   *  
   *  @Author:    hepeng
   *  @Date:  2020/7/18 16:55
@@ -15,8 +15,7 @@ public class Subject1Opt2 {
 
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,5};
-        Stack<Integer> result = twoSum(nums, 9);
-        System.out.println("result : " + result);
+        System.out.println("result : " + twoSum(nums, 9));
     }
 
     /**

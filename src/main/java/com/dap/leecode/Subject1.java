@@ -13,8 +13,7 @@ public class Subject1 {
 
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,5};
-        int[] result = twoSum(nums, 5);
-        System.out.println("result : " + Arrays.toString(result));
+        System.out.println("result : " + Arrays.toString(twoSum(nums, 5)));
     }
 
      /**
