@@ -2,14 +2,16 @@ package com.dap.spider;
 
 public class SysArea {
 
-    private String areaCode;
     private String id;
+    private String areaCode;
     private String areaName;
+    private String fullName;
     private String level;
     private String parentCode;
-    private String delFlag;
-    private String status;
-    private String fullName;
+
+    public String[] recordLine() {
+        return new String[]{id, areaCode, areaName, fullName, level, parentCode};
+    }
 
     public String getAreaCode() {
         return areaCode;
@@ -49,22 +51,6 @@ public class SysArea {
 
     public void setParentCode(String parentCode) {
         this.parentCode = parentCode;
-    }
-
-    public String getDelFlag() {
-        return delFlag;
-    }
-
-    public void setDelFlag(String delFlag) {
-        this.delFlag = delFlag;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getFullName() {
