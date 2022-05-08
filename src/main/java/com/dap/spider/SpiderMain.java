@@ -21,7 +21,7 @@ public class SpiderMain {
     /**
      * 本示例只爬取宁夏回族自治区五级行政区划的信息
      */
-    private static String allName = "北京市";
+    private static String allName = "广东省";
     private static String URL = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2021/index.html";
 
     private static final Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
@@ -38,7 +38,7 @@ public class SpiderMain {
             // 创建CSV写对象 例如:CsvWriter(文件路径，分隔符，编码格式);
             CsvWriter csvWriter = new CsvWriter(PATH + new Date() + ".csv", ',', Charset.forName("UTF-8"));
             // 写内容
-            String[] headers = {"id", "areaCode", "areaName", "fullName", "level", "parentCode"};
+            String[] headers = {"id", "areaCode", "areaName", "fullName", "level", "subjectCode","parentCode"};
             csvWriter.writeRecord(headers);
 
             for (SysArea sysArea : sysAreas) {
@@ -99,22 +99,22 @@ public class SpiderMain {
         for (Element provinceElement : rowProvince) {
             Elements select = provinceElement.select("a");
             for (Element province : select) {
-//                if (province.text().equals(allName)) {
-                String code = province.select("a").attr("href");
-                String name = province.text();
-                SysArea sysArea = new SysArea();
-                sysArea.setAreaCode(code.replace(".html", "0000000000"));
-                sysArea.setId(sysArea.getAreaCode());
-                sysArea.setAreaName(name);
-                sysArea.setLevel("1");
-                sysArea.setParentCode("0");
-                sysArea.setFullName(name);
-                sysAreas.add(sysArea);
-                String provinceUrl = url.replace("index.html", code);
-                System.err.println("++++++++++++++++++++++++++开始获取" + name + "下属市区行政区划信息++++++++++++++++++++++++");
-                List<SysArea> cityAreaCodeList = getCityAreaCode(provinceUrl, code.replace(".html", "0000000000"), name);
-                sysAreas.addAll(cityAreaCodeList);
-//                }
+                if (province.text().equals(allName)) {
+                    String code = province.select("a").attr("href");
+                    String name = province.text();
+                    SysArea sysArea = new SysArea();
+                    sysArea.setAreaCode(code.replace(".html", "0000000000"));
+                    sysArea.setId(sysArea.getAreaCode());
+                    sysArea.setAreaName(name);
+                    sysArea.setLevel("1");
+                    sysArea.setParentCode("0");
+                    sysArea.setFullName(name);
+                    sysAreas.add(sysArea);
+                    String provinceUrl = url.replace("index.html", code);
+                    System.err.println("++++++++++++++++++++++++++开始获取" + name + "下属市区行政区划信息++++++++++++++++++++++++");
+                    List<SysArea> cityAreaCodeList = getCityAreaCode(provinceUrl, code.replace(".html", "0000000000"), name);
+                    sysAreas.addAll(cityAreaCodeList);
+                }
             }
         }
         return sysAreas;
@@ -176,6 +176,11 @@ public class SpiderMain {
             String cityUrl = provinceUrl.replace(".html", "/" + split[0].substring(0, 4) + ".html");
             System.err.println("-------------------开始获取" + split[1] + "下属区县行政区划信息-----------------------");
             List<SysArea> downAreaCodeList = getDownAreaCode(cityUrl, split[0], upAreaName + split[1]);
+
+            // 东莞、中山等特殊城市处理 4级
+            if (downAreaCodeList.size() == 0) {
+                downAreaCodeList = getCountryAreaCodeList(cityUrl, split[0], upAreaName + split[1]);
+            }
             sysAreas.addAll(downAreaCodeList);
             //只爬取固原市的数据
             /*if("固原市".equals(split[1])){
@@ -235,14 +240,31 @@ public class SpiderMain {
             String name = downElement.select("td").text();
             String[] split = name.split(" ");
             SysArea sysArea = new SysArea();
-            sysArea.setAreaCode(split[0]);
-            sysArea.setAreaName(split[1]);
+
+            if (split.length == 2) {
+                sysArea.setAreaCode(split[0]);
+                sysArea.setAreaName(split[1]);
+            }
+
+            if (split.length == 3) {
+                sysArea.setAreaCode(split[0]);
+                sysArea.setSubjectCode(split[1]);
+                sysArea.setAreaName(split[2]);
+            }
+
             sysArea.setParentCode(parentCode);
             sysArea.setLevel("4");
             sysArea.setFullName(upAreaName + split[1]);
             sysArea.setId(sysArea.getAreaCode());
             sysAreas.add(sysArea);
             String countryUrl = downUrl.replace(parentCode.substring(0, 6) + ".html", code);
+
+            // 特殊处理
+            if (sysArea.getFullName().contains("东莞") || sysArea.getFullName().contains("中山")
+                    || sysArea.getFullName().contains("儋州")) {
+                countryUrl = downUrl.replace(parentCode.substring(0, 4) + ".html", code);
+            }
+
             System.err.println("====================开始获取" + split[1] + "下属区划信息");
             List<SysArea> villageAreaCodeList = getVillageAreaCodeList(countryUrl, split[0], upAreaName + split[1]);
             sysAreas.addAll(villageAreaCodeList);
@@ -267,6 +289,7 @@ public class SpiderMain {
             String[] split = name.split(" ");
             SysArea sysArea = new SysArea();
             sysArea.setAreaCode(split[0]);
+            sysArea.setSubjectCode(split[1]);
             sysArea.setAreaName(split[2]);
             sysArea.setParentCode(parentCode);
             sysArea.setLevel("5");

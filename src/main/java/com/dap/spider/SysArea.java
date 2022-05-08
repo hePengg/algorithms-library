@@ -7,10 +7,11 @@ public class SysArea {
     private String areaName;
     private String fullName;
     private String level;
+    private String subjectCode;
     private String parentCode;
 
     public String[] recordLine() {
-        return new String[]{id, areaCode, areaName, fullName, level, parentCode};
+        return new String[]{id, areaCode, areaName, fullName, level, subjectCode, parentCode};
     }
 
     public String getAreaCode() {
@@ -59,5 +60,13 @@ public class SysArea {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public String getSubjectCode() {
+        return subjectCode;
+    }
+
+    public void setSubjectCode(String subjectCode) {
+        this.subjectCode = subjectCode;
     }
 }
