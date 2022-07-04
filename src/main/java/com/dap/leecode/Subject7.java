@@ -18,11 +18,15 @@ public class Subject7 {
 //        System.out.println(MAX_VALUE);
         int n = 124141241;
         System.out.println(n);
-        System.out.println(reverse(n));
+        System.out.println(reverse1(n));
     }
 
-    /** 再比较一遍顺序*/
-    public static int reverse(int x) {
+    /**
+     * 题解1，字符串反转，暴力
+     * @param x
+     * @return
+     */
+    public static int reverse1(int x) {
         String y = String.valueOf(x);
 
         // 判断是否带符号
@@ -57,5 +61,17 @@ public class Subject7 {
         }
 
         return hasSigned ? 0 - result : result;
+    }
+
+    /**
+     * 题解2
+     *   1、末位求余
+     *   2、剩余位求整
+     *   3、考虑int长度，2的31次方 -1 >= int.length >= - 2的31次方
+     * @param x
+     * @return
+     */
+    public static int reverse2(int x) {
+        return 0;
     }
 }

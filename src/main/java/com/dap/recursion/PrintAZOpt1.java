@@ -4,8 +4,6 @@ import java.util.Stack;
 
 /**
  * @Desc: 打印n个aaa...zzz
- * @Author: hepeng
- * @Date: 2020/7/18 18:23
  */
 public class PrintAZOpt1 {
 

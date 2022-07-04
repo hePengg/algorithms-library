@@ -2,8 +2,6 @@ package com.dap.recursion;
 
 /**
  * @Desc: 打印字母，n个长度，从a,b,c...z，打印到aaa...zzz
- * @Author: hepeng
- * @Date: 2020/7/17 23:57
  */
 public class PrintAZ {
 
@@ -27,30 +25,28 @@ public class PrintAZ {
             start = getNextStr(n);
 //            System.out.println(start);
             count++;
-            if (start.equals(end))
+            if (start.equals(end)) {
                 break;
+            }
         }
 
         System.out.println("总数：" + count);
     }
 
-     /**
-      *  @Desc:  26个字母排列组合
-      *     1、aaa->aab->......->aaz->aaa
-      *     2、aba->abb->......->abz->aaa
-      *     3、aca->......->aaa
-      *     4、......
-      *     5、aza->......->aaa
-      *     6、baa->......->aaa
-      *     7、......
-      *     8、zaa->......->aaa
-      *
-      *     如果 最后一位不等于z，就对最后以为加1，生成新的字母
-      *     如果 最后以为等于z，将末尾变成a，就将j往前移动一位，继续循环
-      *  
-      *  @Author:    hepeng
-      *  @Date:  2020/7/18 16:21
-      */
+    /**
+     * @Desc: 26个字母排列组合
+     * 1、aaa->aab->......->aaz->aaa
+     * 2、aba->abb->......->abz->aaa
+     * 3、aca->......->aaa
+     * 4、......
+     * 5、aza->......->aaa
+     * 6、baa->......->aaa
+     * 7、......
+     * 8、zaa->......->aaa
+     * <p>
+     * 如果 最后一位不等于z，就对最后一位加1，生成新的字母
+     * 如果 最后以为等于z，将末尾变成a，就将j往前移动一位，继续循环
+     */
     public static String getNextStr(int n) {
         for (int i = 0, j = chars.length - 1; i < n; i++) {
             if (chars[j] != 'z') {
