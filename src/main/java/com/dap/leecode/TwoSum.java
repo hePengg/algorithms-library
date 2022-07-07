@@ -9,7 +9,7 @@ import java.util.*;
  * @Author: hepeng
  * @Date: 2019/9/16 22:31
  */
-public class Subject1 {
+public class TwoSum {
 
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,5};
