@@ -18,6 +18,7 @@ public class Test {
         for (int i = 0; i < 3; i++) {
             stringBuilder.append(objects[i]);
         }
-        System.out.println(stringBuilder.toString());
+        System.out.println(stringBuilder);
+
     }
 }
