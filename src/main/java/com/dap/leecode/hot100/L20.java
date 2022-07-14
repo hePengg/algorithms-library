@@ -12,16 +12,22 @@ public class L20 {
     public static void main(String[] args) {
         System.out.println(dict);
         System.out.println(isValid("}}"));
+        System.out.println(isValid("{}"));
+        System.out.println(isValid("{{}}"));
     }
 
     public static boolean isValid(String str) {
+        if (str.length() % 2 != 0) {
+            return false;
+        }
+
         Stack<Character> stack = new Stack<>(){};
         Character top = null;
         for (Character c : str.toCharArray()) {
             // first push
             if (stack.empty() || dict.containsKey(c)) {
                 top = stack.push(c);
-            } else if (c == dict.get(top)){
+            } else if (c.equals(dict.get(top))){
                 stack.pop();
                 // length == 0 , will exception
                 top = stack.empty() ? null : stack.peek();
