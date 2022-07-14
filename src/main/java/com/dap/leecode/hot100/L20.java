@@ -1,4 +1,4 @@
-package com.dap.leecode;
+package com.dap.leecode.hot100;
 
 import java.util.HashMap;
 import java.util.Map;
