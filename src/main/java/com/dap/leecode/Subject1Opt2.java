@@ -8,8 +8,6 @@ import java.util.Stack;
 /**
   *  @Desc:  LeeCode题目1，两数相加，优化2
   *  
-  *  @Author:    hepeng
-  *  @Date:  2020/7/18 16:55
   */
 public class Subject1Opt2 {
 

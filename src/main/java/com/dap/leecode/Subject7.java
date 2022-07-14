@@ -6,8 +6,6 @@ package com.dap.leecode;
  * 1、可考虑位运算
  * 2、反转
  *
- * @Author: hepeng
- * @Date: 2019/9/18 17:21
  */
 public class Subject7 {
 
