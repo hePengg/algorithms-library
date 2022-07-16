@@ -8,10 +8,10 @@ import java.util.Random;
 public class L21 {
 
     public static void main(String[] args) {
-        ListNode listNode1 = createListNode(3);
+        ListNode listNode1 = ListNodeUtil.createAscendingListNode(3);
         listNode1.print();
 
-        ListNode listNode2 = createListNode(5);
+        ListNode listNode2 = ListNodeUtil.createAscendingListNode(5);
         listNode2.print();
 
         mergeTwoLists(listNode1, listNode2).print();
@@ -41,47 +41,4 @@ public class L21 {
         }
     }
 
-    static public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        void print() {
-            System.out.print(val + " ");
-
-            ListNode nextTmp = next;
-            while (nextTmp != null) {
-                System.out.print(nextTmp.val + " ");
-                nextTmp = nextTmp.next;
-            }
-
-            System.out.println();
-        }
-    }
-
-    static ListNode createListNode(int length) {
-        ListNode listNode = new ListNode(randomAsc(5));
-        ListNode tmp = listNode;
-        while (length != 0) {
-            tmp.next = new ListNode(randomAsc(tmp.val));
-            tmp = listNode.next;
-            length--;
-        }
-        return listNode;
-    }
-
-    static int randomAsc(int val) {
-        return new Random().nextInt(100) + val;
-    }
 }
