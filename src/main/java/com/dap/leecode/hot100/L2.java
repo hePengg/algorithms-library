@@ -1,5 +1,8 @@
 package com.dap.leecode.hot100;
 
+/**
+ * 两数相加
+ */
 public class L2 {
 
     public static void main(String[] args) {
@@ -12,6 +15,13 @@ public class L2 {
         addTwoNumbers(listNode1, listNode2).print();
     }
 
+    /**
+     * 两个逆序单向链表，除了数字0，不会以0开头
+     *
+     * @param listNode1
+     * @param listNode2
+     * @return
+     */
     static ListNode addTwoNumbers(ListNode listNode1, ListNode listNode2) {
         ListNode preNode = new ListNode(0);
 
