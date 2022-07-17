@@ -65,7 +65,7 @@ public class Jump {
     /**
      * 保存计算过的数据
      */
-    public static int getJumpTime(int n) {
+    private static int getJumpTime(int n) {
         if (jumpTimeMap.containsKey(n)) {
             return jumpTimeMap.get(n);
         } else {
