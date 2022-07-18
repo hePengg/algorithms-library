@@ -1,12 +1,8 @@
-package com.dap.leecode;
-
 import java.util.Stack;
 
-public class Test {
+public class StackTest {
 
     public static void main(String[] args) {
-//        System.out.println(1 << 30);
-
         Stack<Character> stack = new Stack<>();
 
         stack.push('a');
