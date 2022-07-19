@@ -1,3 +1,5 @@
+package com.test;
+
 /**
  * 与运算测试
  */
