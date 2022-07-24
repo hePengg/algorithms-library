@@ -1,5 +1,8 @@
 package com.dap.leecode.hot100;
 
+/**
+ * 二叉树
+ */
 public class TreeNode {
 
     int val;
