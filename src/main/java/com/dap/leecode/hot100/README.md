@@ -13,4 +13,5 @@
 | 226 | [反转二叉树](https://leetcode.cn/problems/invert-binary-tree/)          | [Java]() | Easy   |
 | 234 | [回文链表](https://leetcode.cn/problems/palindrome-linked-list/)          | [Java]() | Easy   |
 | 283 | [移动零](https://leetcode.cn/problems/move-zeroes/)          | [Java]() | Easy   |
+| 338 | [比特位计数](https://leetcode.cn/problems/counting-bits/)          | [Java]() | Easy   |
 
