@@ -11,7 +11,10 @@ public class L136 {
     }
 
     /**
-     * 通过 ^
+     * 通过 ^，亦或运算
+     * <li>n ^ 0 = n</li>
+     * <li>n ^ n = 0</li>
+     * <li>a ^ a ^ b ^ b ^ c ^ 0 = c</li>
      * @see com.test.OROperationTest
      * @param nums
      * @return

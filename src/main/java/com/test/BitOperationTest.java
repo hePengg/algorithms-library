@@ -6,7 +6,7 @@ package com.test;
 public class BitOperationTest {
 
     public static void main(String[] args) {
-        // 1 << 16 等价 2^16 次方
+        // 移位，1 << 16 等价 2^16 次方
         System.out.println(1 << 16);
         System.out.println(Math.pow(2, 16));
 
