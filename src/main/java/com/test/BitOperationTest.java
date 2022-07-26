@@ -2,6 +2,10 @@ package com.test;
 
 /**
  * 位运算
+ * <li><< 左移</li>
+ * <li>>> 右移</li>
+ * <li><<< 无符号左移</li>
+ * <li>>>> 无符号右移</li>
  */
 public class BitOperationTest {
 
