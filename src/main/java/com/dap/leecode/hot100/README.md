@@ -1,10 +1,10 @@
 ## Done： Leecode HOT 100
 
-| #   | Title                                                                                      | Solution | Difficulty |
-|-----|--------------------------------------------------------------------------------------------|----------|----------------------|
-| 1   | [Two Sum](https://leetcode.cn/problems/two-sum/)                                           | [Java]() | Easy   |
-| 2   | [两数相加](https://leetcode.cn/problems/add-two-numbers/)                                      | [Java]() | Easy   |
-| 3   | [无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/) | [Java]() | Easy   |
+| # | Title                                                                                      | Solution | Difficulty |
+|--|--------------------------------------------------------------------------------------------|----------|----------------------|
+| 1 | [Two Sum](https://leetcode.cn/problems/two-sum/)                                           | [Java]() | Easy   |
+| 2 | [两数相加](https://leetcode.cn/problems/add-two-numbers/)                                      | [Java]() | Easy   |
+| 3 | [无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/) | [Java]() | Easy   |
 | 101 | [对称二叉树](https://leetcode.cn/problems/symmetric-tree/)                                      | [Java]() | Easy   |
 | 104 | [二叉树最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)                      | [Java]() | Easy   |
 | 121 | [买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)                 | [Java]() | Easy   |
@@ -20,4 +20,5 @@
 | 448 | [找到所有数组中消失的数字](https://leetcode.cn/problems/find-all-numbers-disappeared-in-an-array/)     | [Java]() | Easy   |
 | 461 | [汉明距离](https://leetcode.cn/problems/hamming-distance/)                                     | [Java]() | Easy   |
 | 543 | [二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)                 | [Java]() | Easy   |
+| 617 | [合并二叉树](https://leetcode.cn/problems/merge-two-binary-trees/)                 | [Java]() | Easy   |
 
