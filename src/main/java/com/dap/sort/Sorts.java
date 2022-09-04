@@ -1,6 +1,9 @@
 package com.dap.sort;
 
+import org.springframework.util.CollectionUtils;
+
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -26,26 +29,31 @@ import java.util.Random;
 public class Sorts {
 
     public static void main(String[] args) {
-        System.out.println("排序前数组：");
+        System.out.print("排序前数组：");
         int[] data = random(10);
         out(data);
 
-//        System.out.println("使用冒泡排序后：");
-//        bubbleSort(data);
-//        out(data);
+        System.out.print("冒泡排序后：");
+        bubbleSort(data);
+        out(data);
 
-//        System.out.println("使用选择排序后：");
-//        selectionSort(data);
-//        out(data);
-
-        System.out.println("使用快速排序后：");
+        System.out.print("选择排序后：");
         selectionSort(data);
         out(data);
+
+        System.out.print("快速排序后：");
+        quickSort(data);
+        out(data);
+
+        // TOTO 插入排序
+        // TOTO 堆排序
+        // TOTO 归并排序
     }
 
     /**
      * 冒泡排序
-     * 交换排序
+     * <li>时间 O(n^2)</li>
+     * <li>空间 O(1)</li>
      */
     public static void bubbleSort(int[] data) {
         int length = data.length;
@@ -88,42 +96,43 @@ public class Sorts {
 
     /**
      * @Desc: 快速排序
-     *    从数列中挑出一个元素，称为 “基准”（pivot）；
-     *
-     *   重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。
-     *   在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；
-     *   递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
-     *
-     *   @param data 排序数组
-     *   @param low 低位下标
-     *   @param high 高位下标
-     *
+     * 从数列中挑出一个元素，称为 “基准”（pivot）；
+     * <p>
+     * 重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。
+     * 在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；
+     * 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
      */
-    public static void quickSort(int[] data, int low, int high) {
-        if (low < high) {
-            int i = partition(data, low, high);
-            quickSort(data, low, i - 1);
-            quickSort(data, i, high);
+    public static void quickSort(int[] data) {
+        if (data != null && data.length != 0) {
+            quickSort(data, 0, data.length - 1);
         }
     }
 
-    public static int partition(int[] data, int low , int high) {
+    public static void quickSort(int[] data, int left, int right) {
+        if (left < right) {
+            int index = partition(data, left, right);
+            quickSort(data, left, index - 1);
+            quickSort(data, index, right);
+        }
+    }
+
+    public static int partition(int[] data, int left, int right) {
         // 基准值
-        int base = data[low];
-        int index = low + 1;
-        for (int i = low + 1; i <= high; i++) {
+        int base = left;
+        int index = base + 1;
+        for (int i = index; i <= right; i++) {
             // 小于基准值
-            if (data[i] < base) {
+            if (data[i] < data[base]) {
                 // 换到基准值后面的位置
                 swap(data, i, index);
                 index++;
             }
         }
-        swap(data, base, index);
+        swap(data, base, index - 1);
         return index;
     }
 
-    public static void swap(int[] data, int i , int j) {
+    public static void swap(int[] data, int i, int j) {
         int temp = data[i];
         data[i] = data[j];
         data[j] = temp;
@@ -153,9 +162,8 @@ public class Sorts {
      */
     public static void out(int[] data) {
         Arrays.stream(data).forEach(value -> {
-            System.out.print(value + ",");
+            System.out.print(value + " ");
         });
         System.out.println();
-        System.out.println("--------------------------------------");
     }
 }

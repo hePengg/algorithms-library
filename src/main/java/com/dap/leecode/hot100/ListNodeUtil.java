@@ -4,6 +4,11 @@ import java.util.Random;
 
 public class ListNodeUtil {
 
+    /**
+     * 创建随机长度的链表
+     * @param length
+     * @return
+     */
     public static ListNode createRandomListNode(int length) {
         ListNode listNode = new ListNode(new Random().nextInt(10));
         ListNode tmp = listNode;
