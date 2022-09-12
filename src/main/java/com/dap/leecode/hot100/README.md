@@ -5,10 +5,11 @@
 | 1   | [Two Sum](https://leetcode.cn/problems/two-sum/)                                           | [Java]() | Easy   |
 | 2   | [两数相加](https://leetcode.cn/problems/add-two-numbers/)                                      | [Java]() | Medium |
 | 3   | [无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/) | [Java]() | Medium |
-| 7   | [整数反转](https://leetcode.cn/problems/reverse-integer/)       | [Java]() | Medium |
+| 7   | [整数反转](https://leetcode.cn/problems/reverse-integer/)                                      | [Java]() | Medium |
 | 20  | [有效的括号](https://leetcode.cn/problems/valid-parentheses/?favorite=2cktkvj)                  | [Java]() | Easy   |
 | 21  | [合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/?favorite=2cktkvj)          | [Java]() | Easy   |
 | 53  | [最大字数组和](https://leetcode.cn/problems/maximum-subarray/?favorite=2cktkvj)                  | [Java]() | Easy   |
+| 66  | [加1](https://leetcode.cn/problems/plus-one/)                      | [Java]() | Easy   |
 | 70  | [爬楼梯](https://leetcode.cn/problems/climbing-stairs/?favorite=2cktkvj)                      | [Java]() | Easy   |
 | 94  | [二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/?favorite=2cktkvj)   | [Java]() | Easy   |
 | 101 | [对称二叉树](https://leetcode.cn/problems/symmetric-tree/)                                      | [Java]() | Easy   |
