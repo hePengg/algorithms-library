@@ -41,7 +41,7 @@ public class L70 {
         int sum = 1;
         // n1 -> f(n-2)
         int n1 = 0;
-        // n1 -> f(n-1)
+        // n2 -> f(n-1)
         int n2 = 0;
         for (int i = 1; i <= n; i++) {
             n1 = n2;
